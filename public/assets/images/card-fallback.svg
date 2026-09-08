@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 220" role="img" aria-labelledby="title">
+  <title>Imagem de carta indisponivel</title>
+  <rect width="160" height="220" rx="5" fill="#e9e8e5"/>
+  <rect x="12" y="12" width="136" height="196" rx="3" fill="#d4d2cd"/>
+  <path d="M80 65v54M53 92h54" stroke="#8e8b84" stroke-width="8" stroke-linecap="round"/>
+  <rect x="40" y="145" width="80" height="6" rx="3" fill="#aaa69d"/>
+</svg>

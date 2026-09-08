@@ -1,0 +1,48 @@
+name: cardmancer
+
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:-cardmancer}
+      MYSQL_USER: ${DB_USER:-cardmancer}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-cardmancer}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
+    volumes:
+      - cardmancer_db:/var/lib/mysql
+      - ./database/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p$$MYSQL_ROOT_PASSWORD --silent"]
+      start_period: 60s
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      APP_ENV: ${APP_ENV:-local}
+      APP_DEBUG: ${APP_DEBUG:-1}
+      APP_URL: ${APP_URL:-http://localhost:8080}
+      APP_SESSION_NAME: ${APP_SESSION_NAME:-cardmancer_session}
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME:-cardmancer}
+      DB_USER: ${DB_USER:-cardmancer}
+      DB_PASSWORD: ${DB_PASSWORD:-cardmancer}
+      UPLOAD_MAX_BYTES: ${UPLOAD_MAX_BYTES:-5242880}
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public/uploads:/var/www/html/public/uploads
+
+volumes:
+  cardmancer_db:
+    name: liga_magic_cardmancer_db

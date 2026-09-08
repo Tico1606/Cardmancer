@@ -1,5 +1,5 @@
 <h1 align="center">
-  Cardmancer
+  <img src="public/assets/images/card-games.png" alt="Cardmancer icon" width="32" height="32" align="center"> Cardmancer
 </h1>
 
 <p align="center">

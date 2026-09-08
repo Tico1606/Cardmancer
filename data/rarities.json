@@ -1,0 +1,34 @@
+{
+  "magic": [
+    "Common",
+    "Uncommon",
+    "Rare",
+    "Mythic Rare",
+    "Special",
+    "Bonus"
+  ],
+  "pokemon": [
+    "Common",
+    "Uncommon",
+    "Rare",
+    "Double Rare",
+    "Ultra Rare",
+    "Illustration Rare",
+    "Special Illustration Rare",
+    "Hyper Rare",
+    "ACE SPEC Rare",
+    "Promo"
+  ],
+  "yugioh": [
+    "Common",
+    "Rare",
+    "Super Rare",
+    "Ultra Rare",
+    "Secret Rare",
+    "Ultimate Rare",
+    "Ghost Rare",
+    "Collector's Rare",
+    "Starlight Rare",
+    "Quarter Century Secret Rare"
+  ]
+}

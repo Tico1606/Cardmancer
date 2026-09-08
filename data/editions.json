@@ -1,0 +1,34 @@
+{
+  "magic": {
+    "label": "Magic: The Gathering",
+    "editions": [
+      { "id": "dominaria", "name": "Dominaria" },
+      { "id": "war-of-the-spark", "name": "War of the Spark" },
+      { "id": "the-hobbit", "name": "The Hobbit" },
+      { "id": "marvel-super-heroes-commander", "name": "Marvel Super Heroes Commander" },
+      { "id": "modern-horizons-3", "name": "Modern Horizons 3" },
+      { "id": "innistrad-remastered", "name": "Innistrad Remastered" }
+    ]
+  },
+  "pokemon": {
+    "label": "Pokémon",
+    "editions": [
+      { "id": "scarlet-violet", "name": "Scarlet & Violet" },
+      { "id": "shrouded-fable", "name": "Shrouded Fable" },
+      { "id": "surging-sparks", "name": "Surging Sparks" },
+      { "id": "sword-shield", "name": "Sword & Shield" },
+      { "id": "sun-moon", "name": "Sun & Moon" },
+      { "id": "base-set", "name": "Base Set" }
+    ]
+  },
+  "yugioh": {
+    "label": "Yu-Gi-Oh!",
+    "editions": [
+      { "id": "rise-of-the-duelist", "name": "Rise of the Duelist" },
+      { "id": "legend-of-blue-eyes-white-dragon", "name": "Legend of Blue-Eyes White Dragon" },
+      { "id": "phantom-rage", "name": "Phantom Rage" },
+      { "id": "labyrinth-of-nightmare", "name": "Labyrinth of Nightmare" },
+      { "id": "quarter-century-bonanza", "name": "Quarter Century Bonanza" }
+    ]
+  }
+}

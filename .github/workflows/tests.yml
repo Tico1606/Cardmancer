@@ -1,0 +1,30 @@
+name: Testes
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: Testes PHP
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v6
+
+      - name: Executar testes
+        run: docker compose run --rm --build app php tests/run.php
+
+      - name: Limpar serviços Docker
+        if: ${{ always() }}
+        run: docker compose down --volumes --remove-orphans

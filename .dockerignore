@@ -1,0 +1,10 @@
+.git
+.agents
+.opencode
+.serena
+node_modules
+documentation
+scripts
+coverage
+.env
+*.log

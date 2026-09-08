@@ -282,9 +282,23 @@ function renderPagination() {
     $('#next-page').disabled = state.page >= state.totalPages;
     const pageButtons = $('#page-buttons');
     pageButtons.replaceChildren();
-    const first = Math.max(1, state.page - 1);
-    const last = Math.min(state.totalPages, first + 3);
-    for (let page = first; page <= last; page += 1) {
+
+    const pages = state.totalPages <= 7
+        ? Array.from({ length: state.totalPages }, (_, index) => index + 1)
+        : state.page <= 3
+            ? [1, 2, 3, state.totalPages - 1, state.totalPages]
+            : state.page >= state.totalPages - 2
+                ? [1, 2, state.totalPages - 2, state.totalPages - 1, state.totalPages]
+                : [1, state.page - 1, state.page, state.page + 1, state.totalPages];
+
+    let previousPage = 0;
+    pages.forEach((page) => {
+        if (page - previousPage > 1) {
+            const ellipsis = text('span', '…', 'pagination-ellipsis');
+            ellipsis.setAttribute('aria-hidden', 'true');
+            pageButtons.append(ellipsis);
+        }
+
         const pageButton = button(String(page), page === state.page ? 'is-active' : '', () => {
             state.page = page;
             syncUrl();
@@ -293,7 +307,8 @@ function renderPagination() {
         pageButton.setAttribute('aria-label', `Ir para a página ${page}`);
         pageButton.setAttribute('aria-current', page === state.page ? 'page' : 'false');
         pageButtons.append(pageButton);
-    }
+        previousPage = page;
+    });
 }
 
 function renderInspector() {

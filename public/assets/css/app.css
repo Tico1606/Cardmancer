@@ -1073,6 +1073,15 @@ tbody tr.is-selected {
     background: var(--surface);
 }
 
+.pagination-ellipsis {
+    display: inline-grid;
+    width: 18px;
+    height: 27px;
+    place-items: center;
+    color: var(--muted);
+    font-size: 14px;
+}
+
 .mobile-card-list {
     display: none;
 }
@@ -3165,6 +3174,10 @@ body.detail-page {
 .management-page .pagination button:disabled {
     color: #55585e;
     background: #1b1e22;
+}
+
+.management-page .pagination-ellipsis {
+    color: #a6a09a;
 }
 
 .management-page .state-panel {

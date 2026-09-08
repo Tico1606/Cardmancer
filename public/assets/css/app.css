@@ -2004,6 +2004,10 @@ body.management-page .image-preview {
     padding: 28px 36px 30px;
     color: #fff8f2;
     background: #1b0b06 url('/assets/images/login-bg.png') center center / cover no-repeat;
+    z-index: 2;
+    width: calc(100% + 30px);
+    margin-right: -30px;
+    background-position: calc(50% - 15px) center;
 }
 
 .login-page .login-brand-panel::before {
@@ -2121,6 +2125,7 @@ body.management-page .image-preview {
     padding: 50px 70px;
     color: #f6f0ea;
     background: radial-gradient(circle at 66% 48%, #25282d 0, #191c20 54%, #111315 100%);
+    z-index: 1;
 }
 
 .login-page .login-form-wrap {
@@ -4025,6 +4030,10 @@ body.management-page .toast {
 
     .login-page .login-brand-panel {
         height: auto;
+        z-index: auto;
+        width: auto;
+        margin-right: 0;
+        background-position: center center;
     }
 
     body.management-page,
